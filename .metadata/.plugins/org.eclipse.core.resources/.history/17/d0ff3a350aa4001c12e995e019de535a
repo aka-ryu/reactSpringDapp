@@ -1,0 +1,5 @@
+package org.sample.persistence;
+
+public class TimeMapperTests {
+
+}

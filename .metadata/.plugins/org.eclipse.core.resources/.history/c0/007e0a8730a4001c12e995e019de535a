@@ -1,0 +1,7 @@
+package org.sample.filter;
+
+import javax.servlet.Filter;
+
+public class CORSFilter implements Filter {
+
+}

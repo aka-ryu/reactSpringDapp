@@ -1,0 +1,11 @@
+package org.sample.filter;
+
+
+import org.slf4j.Logger;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SimpleCORSFilter {
+
+	private final Logger log = LoggerFactory.getLogger()
+}
