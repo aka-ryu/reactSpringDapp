@@ -1,0 +1,5 @@
+package org.sample.board;
+
+public class BoardVO {
+
+}

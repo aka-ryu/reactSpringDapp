@@ -36,5 +36,10 @@
 
 	<context:component-scan
 		base-package="org.test.test"></context:component-scan>
+	
+	<context:component-scan base-package="org.sample.service">
+	</context:component-scan>
+	<context:component-scan base-package="org.sample.board">
+	</context:component-scan>
 
 </beans>

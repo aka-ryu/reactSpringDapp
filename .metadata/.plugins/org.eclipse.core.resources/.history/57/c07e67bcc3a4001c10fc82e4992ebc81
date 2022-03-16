@@ -1,0 +1,8 @@
+package org.sample.mapper;
+
+public interface BoardMapper {
+	
+	@Select("SELECT * FROM tbl_board WHERE bno > 0")
+	public List<BoardVO> getList();
+
+}
