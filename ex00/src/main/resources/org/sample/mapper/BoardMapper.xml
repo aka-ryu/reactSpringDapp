@@ -11,7 +11,9 @@
   			  FROM (
   			  		SELECT /*+INDEX_DESC(tbl_board pk_board) */
   			  			rownum rn, bno, title, content, writer, regdate
-  			  		  FROM tbl_board
+  			  		  FROM (
+  			  		  		SELECT * FROM tbl_board ORDER BY bno DESC
+  			  		  )
   			  		 WHERE rownum <= #{pageNum} * #{amount}
 			  )
 			 WHERE rn > (#{pageNum}-1) * #{amount}		

@@ -19,10 +19,10 @@ public class BoardServiceImpl implements BoardService{
 	private BoardMapper mapper;
 
 	@Override
-	public void register(BoardVO board) {
+	public boolean register(BoardVO board) {
 		
 		log.info("register " + board);
-		mapper.insert(board);
+		return mapper.insert(board) == 1;
 	}
 
 	@Override

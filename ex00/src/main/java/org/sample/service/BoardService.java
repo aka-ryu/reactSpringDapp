@@ -8,7 +8,7 @@ import org.sample.board.PageDTO;
 
 public interface BoardService {
 
-	public void register(BoardVO board);
+	public boolean register(BoardVO board);
 	
 	public BoardVO get(Long bno);
 	
