@@ -1,0 +1,11 @@
+package org.sample.auth;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+@RequestMapping("/sample/*")
+public class SampleController {
+
+}

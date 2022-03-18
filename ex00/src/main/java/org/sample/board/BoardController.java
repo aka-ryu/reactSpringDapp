@@ -29,7 +29,7 @@ public class BoardController {
 
 	private BoardService service;
 
-	@GetMapping(value = "/list/{page}", produces = "application/json; charset=utf8")
+	@GetMapping(value = "/list/{page}",  produces = "application/json; charset=utf8")
 	public ResponseEntity<Map<String, Object>> getList(@PathVariable("page") int page) {
 
 		System.out.println("요청된 리스트 페이지는 : " + page);
@@ -44,7 +44,7 @@ public class BoardController {
 	@GetMapping(value = "/detail/{bno}", produces = "application/json; charset=utf8")
 	public ResponseEntity<Map<String, Object>> get(@PathVariable("bno") Long bno) {
 
-		System.out.println(bno + "번 글 디테일 페이지");
+		System.out.println(bno + "번 글 데이터 요청");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("post", service.get(bno));
 
@@ -87,10 +87,35 @@ public class BoardController {
 	@GetMapping(value = "/edit/{bno}", produces = "application/json; charset=utf8")
 	public ResponseEntity<Map<String, Object>> getEdit(@PathVariable("bno") Long bno) {
 
-		System.out.println(bno + "번 글 수정 페이지");
+		System.out.println(bno + "번 글 수정 요청 페이지");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("post", service.get(bno));
 
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
+	
+	@PostMapping(value="/modify/{bno}", produces = "application/json; charset=utf8") 
+	public ResponseEntity<Map<String, Object>> modify(@RequestBody BoardVO board){ 
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			service.modify(board);
+		} catch (Exception e) {
+			map.put("Fail", e.getMessage());
+		}
+		
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	@PostMapping(value="/remove/{bno}", produces = "application/json; charset=utf8")
+	public ResponseEntity<Map<String, Object>> remove(@PathVariable("bno") Long bno) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			service.remove(bno);
+		} catch (Exception e) {
+			map.put("Fail", e.getMessage());
+		}
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+			
 }
