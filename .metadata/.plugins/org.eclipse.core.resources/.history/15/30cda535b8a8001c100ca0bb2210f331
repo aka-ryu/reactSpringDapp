@@ -1,0 +1,21 @@
+package org.sample.service;
+
+import org.sample.mapper.MemberMapper;
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+@Service
+@AllArgsConstructor
+public class UserServiceImpl implements UserService{
+
+	private MemberMapper mapper;
+
+	@Override
+	public int duplicateCheck(String userid) {
+		
+		return mapper.duplicateCheck(userid);
+	}
+}

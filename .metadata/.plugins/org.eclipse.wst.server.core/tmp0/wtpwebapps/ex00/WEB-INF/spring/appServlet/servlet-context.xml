@@ -23,6 +23,7 @@
 	
 	<context:component-scan base-package="org.sample.ryu" />
 	<context:component-scan base-package="org.sample.board"/>
+	<context:component-scan base-package="org.sample.auth"/>
 	
 	
 	

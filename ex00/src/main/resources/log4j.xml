@@ -31,6 +31,14 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
+	<logger name="org.sample.board">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.sample.auth">
+		<level value="info" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>

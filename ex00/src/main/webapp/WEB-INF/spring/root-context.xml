@@ -39,7 +39,11 @@
 	
 	<context:component-scan base-package="org.sample.service">
 	</context:component-scan>
+	
 	<context:component-scan base-package="org.sample.board">
+	</context:component-scan>
+	
+	<context:component-scan base-package="org.sample.auth">
 	</context:component-scan>
 
 </beans>
